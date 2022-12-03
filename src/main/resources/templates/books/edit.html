@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>To edit a book</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
 <form th:method="PATCH" th:action="@{/books/{id}(id=${book.getId()})}" th:object="${book}">

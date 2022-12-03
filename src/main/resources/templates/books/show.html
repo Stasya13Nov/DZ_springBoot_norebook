@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Book</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
 <h1>Информация о книге</h1>
 
 <h2>Автор</h2>
-<div th:text="${book.getAuthor()}"></div>
+<div class="author" th:text="${book.getAuthor()}"></div>
 
 <h2>Название книги</h2>
-<div th:text="${book.getNameOfBook()}"></div>
+<div class="nameOfBook" th:text="${book.getNameOfBook()}"></div>
 
 <h2>Жанр</h2>
-<div th:text="${book.getGenre()}"></div>
+<div class="genre" th:text="${book.getGenre()}"></div>
 <hr>
 <hr>
 <div>

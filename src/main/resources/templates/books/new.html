@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>To add a book</title>
-    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
 <form th:method="POST" th:action="@{/books}" th:object="${book}">
 <div>
     <label for="author">Автор</label>
-    <input type="text" th:field="*{author}" id = "author">
+    <input type="text" placeholder="автор" th:field="*{author}" id = "author">
 </div>
     <div>
         <label for="nameOfBook">Название книги</label>
-        <input type="text" th:field="*{nameOfBook}" id = "nameOfBook">
+        <input type="text" placeholder="имя книги" th:field="*{nameOfBook}" id = "nameOfBook">
     </div>
     <div>
         <label for="genre">Жанр</label>
-        <input type="text" th:field="*{genre}" id = "genre">
-
+        <input type="text"placeholder="жанр" th:field="*{genre}" id = "genre">
+    <br>
         <input type="submit" value="Добавить книгу" class="button">
     </div>
 </form>
