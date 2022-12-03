@@ -56,6 +56,12 @@ public class BookController {
         bookDAO.updateBook(id, book);
         return "redirect:/books";
     }
+//при нажатии на кнопку "удалить"
+    @DeleteMapping("/{id}")
+    public String deleteBook(@PathVariable("id") int id){
+        bookDAO.deleteBook(id);
+        return "redirect:/books";
+    }
 
 
 }

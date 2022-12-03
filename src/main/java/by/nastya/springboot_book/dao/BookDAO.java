@@ -98,6 +98,16 @@ public void updateBook(int id, Book updatedBook) {
 }
 //Удаляем книгу
 //DELETE
-
+public void deleteBook(int id){
+        try{
+            String query = "DELETE FROM Book WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1,id);
+            statement.executeUpdate();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+}
 
 }
