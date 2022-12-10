@@ -12,15 +12,20 @@
 <div>
     <label for="author">Автор</label>
     <input type="text" placeholder="автор" th:field="*{author}" id = "author">
+    <div class="error" th:if="${#fields.hasErrors('author')}" th:errors="*{author}" ></div>
 </div>
     <div>
         <label for="nameOfBook">Название книги</label>
         <input type="text" placeholder="имя книги" th:field="*{nameOfBook}" id = "nameOfBook">
+        <div class="error" th:if="${#fields.hasErrors('nameOfBook')}" th:errors="*{nameOfBook}" ></div>
+
     </div>
     <div>
         <label for="genre">Жанр</label>
         <input type="text"placeholder="жанр" th:field="*{genre}" id = "genre">
-    <br>
+        <div class="error" th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}" ></div>
+
+        <br>
         <input type="submit" value="Добавить книгу" class="button">
     </div>
 </form>

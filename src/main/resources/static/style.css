@@ -63,6 +63,7 @@ label{
     color:black
 }
 .author{
+    background: #f40d0d;
     color: #cbf169;
     text-align:center;
     font-size: 30px;
@@ -71,6 +72,7 @@ label{
     letter-spacing:2px;
 }
 .nameOfBook{
+    background: #f129d8;
     color: #a0daec;
     text-align:center;
     font-size: 30px;
@@ -79,11 +81,15 @@ label{
     letter-spacing:2px;
 }
 .genre{
+    background: #0047ff;
     color: #ecbef1;
     text-align:center;
     font-size: 30px;
     font-family: 'Kenia', cursive;
     font-weight: 400;
     letter-spacing:2px;
-
+}
+.error{
+    color: #ed5858;
+    font-size: 17px;
 }

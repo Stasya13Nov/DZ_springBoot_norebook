@@ -12,18 +12,21 @@
     <div>
         <label for="author">Автор</label>
         <input type="text" th:field="*{author}" id="author">
+        <div class="error" th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></div>
     </div>
 
     <div>
         <label for="nameOfBook">Название книги</label>
               <input type="text" th:field="*{nameOfBook}" id="nameOfBook">
+        <div class="error" th:if="${#fields.hasErrors('nameOfBook')}" th:errors="*{nameOfBook}"></div>
     </div>
     <div>
         <label for="genre">Жанр</label>
         <input type="text" th:field="*{genre}" id="genre">
+        <div class="error" th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}"></div>
     </div>
 
-    <input type="submit" value="Отредактировать"  class="button">
+    <input type="submit" value="Редактировать"  class="button">
 </form>
 
 </body>

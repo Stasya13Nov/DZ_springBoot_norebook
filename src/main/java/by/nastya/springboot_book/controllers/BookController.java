@@ -2,10 +2,12 @@ package by.nastya.springboot_book.controllers;
 
 import by.nastya.springboot_book.dao.BookDAO;
 import by.nastya.springboot_book.models.Book;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.sound.midi.Receiver;
@@ -32,13 +34,16 @@ public class BookController {
     }
 //форма для создания книги
     @GetMapping("/new")
-    public String createForm(Model model) {
+    public String createForm(Model model) {   //(@ModelAttribute("book") Book book) - вместо двух строчек
         model.addAttribute("book", new Book());
         return "books/new";
     }
 //при нажатии на кнопку "создать книгу"
     @PostMapping
-    public String createBook(@ModelAttribute("book") Book book) {
+    public String createBook(@ModelAttribute("book") @Valid Book book, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()){
+            return "books/new";
+        }
         bookDAO.addBook(book);
         return "redirect:/books";
     }
@@ -51,8 +56,11 @@ public class BookController {
     }
 //при нажатии на кнопку "отредактировать"
     @PatchMapping("/{id}")
-    public String updateBook(@ModelAttribute("recipe") Book book,
-                               @PathVariable("id") int id) {
+    public String updateBook(@ModelAttribute("book") @Valid Book book, BindingResult bindingResult,
+                             @PathVariable("id") int id) {
+        if (bindingResult.hasErrors()){
+            return "books/edit";
+        }
         bookDAO.updateBook(id, book);
         return "redirect:/books";
     }
